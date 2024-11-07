@@ -6,19 +6,19 @@ import pygame, sys, time
 class MainWindow:
     FRAMES_PER_SECOND = 50
     IMAGES = {
-        "stopwatch": pygame.image.load("assets/images/stopwatch.png"),
-        "flag": pygame.image.load("assets/images/flag.png"),
-        "square": pygame.image.load("assets/images/square.png"),
-        "B": pygame.image.load("assets/images/bomb.png"),
-        "0": pygame.image.load("assets/images/0.png"),
-        "1": pygame.image.load("assets/images/1.png"),
-        "2": pygame.image.load("assets/images/2.png"),
-        "3": pygame.image.load("assets/images/3.png"),
-        "4": pygame.image.load("assets/images/4.png"),
-        "5": pygame.image.load("assets/images/5.png"),
-        "6": pygame.image.load("assets/images/6.png"),
-        "7": pygame.image.load("assets/images/7.png"),
-        "8": pygame.image.load("assets/images/8.png")}
+        "stopwatch": pygame.image.load("assets/stopwatch.png"),
+        "flag": pygame.image.load("assets/flag.png"),
+        "square": pygame.image.load("assets/square.png"),
+        "B": pygame.image.load("assets/bomb.png"),
+        "0": pygame.image.load("assets/0.png"),
+        "1": pygame.image.load("assets/1.png"),
+        "2": pygame.image.load("assets/2.png"),
+        "3": pygame.image.load("assets/3.png"),
+        "4": pygame.image.load("assets/4.png"),
+        "5": pygame.image.load("assets/5.png"),
+        "6": pygame.image.load("assets/6.png"),
+        "7": pygame.image.load("assets/7.png"),
+        "8": pygame.image.load("assets/8.png")}
     
     def __init__(self):
         """Initialize MainWindow-object"""
