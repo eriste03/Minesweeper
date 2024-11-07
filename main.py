@@ -25,7 +25,7 @@ class MainWindow:
 
         # Window properties
         pygame.init()
-        self.screen = pygame.display.set_mode((800, 1000))
+        self.screen = pygame.display.set_mode((600, 800))
         pygame.display.set_caption("Minesweeper - Erik Steigen")
         self.clock = pygame.time.Clock()
         
@@ -35,7 +35,7 @@ class MainWindow:
 
         # Initialize game
         self.bombImage = pygame.transform.scale(MainWindow.IMAGES["flag"], (100, 100))
-        self.stopwatchImage = pygame.transform.scale(MainWindow.IMAGES["stopwatch"], (200, 200))
+        self.stopwatchImage = pygame.transform.scale(MainWindow.IMAGES["stopwatch"], (100, 100))
         self.initialize()
 
     def initialize(self):
@@ -43,12 +43,12 @@ class MainWindow:
 
         # Initialize buttons to be displayed
         self.buttons = {
-            "DIFFICULTY": pygame.Rect(140, 200, 520, 80),
-            "EASY": pygame.Rect(140, 300, 250, 100),
-            "MEDIUM": pygame.Rect(410, 300, 250, 100),
-            "HARD": pygame.Rect(140, 420, 250, 100),
-            "IMPOSSIBLE": pygame.Rect(410, 420, 250, 100),
-            "PLAY": pygame.Rect(250, 570, 300, 80)}
+            "DIFFICULTY": pygame.Rect(100, 100, 400, 80),
+            "EASY": pygame.Rect(60, 200, 230, 100),
+            "MEDIUM": pygame.Rect(310, 200, 230, 100),
+            "HARD": pygame.Rect(60, 320, 230, 100),
+            "IMPOSSIBLE": pygame.Rect(310, 320, 230, 100),
+            "PLAY": pygame.Rect(150, 470, 300, 80)}
 
         # Gameloop for setup screen
         while True:
@@ -104,7 +104,7 @@ class MainWindow:
         """Start the game with selected settings"""
         # Initialize settings from difficulty
         self.board = Board(self.difficulty)
-        self.squareSize = 800 / self.board.size[0]
+        self.squareSize = 600 / self.board.size[0]
 
         # Scale images
         self.images = {}
@@ -178,18 +178,18 @@ class MainWindow:
     def drawGame(self):
         """Draw the board and topbar"""
         # Initialize font
-        font = pygame.font.Font(None, 125)
+        font = pygame.font.Font(None, 60)
 
         # Draw bombcounter
-        self.screen.blit(self.bombImage, pygame.Rect(50, 50, 100, 100))
+        self.screen.blit(self.bombImage, pygame.Rect(20, 50, 100, 100))
         flags = str(max(0, self.board.bombs - sum(1 for y in self.board.board for square in y if square.flagged)))
         text = font.render(flags, True, (50, 50, 50))
-        self.screen.blit(text, text.get_rect(center=pygame.Rect(150, 60, 200, 80).center))
+        self.screen.blit(text, text.get_rect(center=pygame.Rect(80, 60, 200, 80).center))
 
         # Draw stopwatch
-        self.screen.blit(self.stopwatchImage, pygame.Rect(400, 35, 100, 100))
+        self.screen.blit(self.stopwatchImage, pygame.Rect(350, 50, 100, 100))
         text = font.render(str(float(round((pygame.time.get_ticks()-self.startTick)/1000, 1))), True, (50, 50, 50))
-        self.screen.blit(text, text.get_rect(center=pygame.Rect(580, 50, 100, 100).center))
+        self.screen.blit(text, text.get_rect(center=pygame.Rect(450, 50, 100, 100).center))
 
         # Draw squares
         for y in self.board.board:

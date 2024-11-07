@@ -1,18 +1,18 @@
 {
     "EASY": {
-        "SIZE": [16, 16],
-        "BOMBS": 30
+        "SIZE": [12, 12],
+        "BOMBS": 17
     },
     "MEDIUM": {
-        "SIZE": [25, 25],
-        "BOMBS": 80
+        "SIZE": [20, 20],
+        "BOMBS": 50
     },
     "HARD": {
-        "SIZE": [40, 40],
-        "BOMBS": 250
+        "SIZE": [30, 30],
+        "BOMBS": 140
     },
     "IMPOSSIBLE": {
-        "SIZE": [80, 80],
-        "BOMBS": 1000
+        "SIZE": [60, 60],
+        "BOMBS": 550
     }
 }
